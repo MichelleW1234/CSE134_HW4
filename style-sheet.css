@@ -444,13 +444,13 @@ form {
 
   }
 
-  .required-input:valid{
+  .required-input:user-valid{
 
     border: 0.15rem dashed rgb(43, 255, 0);
 
   }
 
-  .required-input:invalid{
+  .required-input:user-invalid{
 
     border: 0.15rem dashed red;
 
@@ -470,6 +470,18 @@ form {
     border-left: 0.25rem solid black;
     border-top: 0.15rem solid black;
     border-right: 0.15rem solid black;
+
+  }
+
+  textarea:user-valid{
+
+    border: 0.15rem dashed rgb(43, 255, 0);
+
+  }
+
+  textarea:user-invalid{
+
+    border: 0.15rem dashed red;
 
   }
 

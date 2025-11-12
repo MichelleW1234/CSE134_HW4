@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <title> Michelle's Portfolio </title>
+    <link rel="stylesheet" href="style-sheet.css">
+</head>
+<body>
+    <header>
+        <h1> My Contact Form </h1>
+    </header>
+
+    <main>
+        <form action="https://httpbin.org/post" method="POST">
+            <fieldset>
+                <legend> Personal Information: </legend>
+                <label for = "first_name"> First Name: </label>
+                <input class = "required-input" type = "text" id = "first_name" name = "first_name" minlength="2" pattern="[A-Za-zÀ-ž'\-\s]+" placeholder="first name" required>
+                <label for = "last_name"> Last Name: </label>
+                <input class = "required-input" type = "text" id = "last_name" name = "last_name" minlength="2" pattern="[A-Za-zÀ-ž'\-\s]+" placeholder="last name" required>
+                <label for = "email-address"> Email Address: </label>
+                <input class = "required-input" type = "email" id = "email_address" name = "email_address" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" placeholder="name@example.com" required>
+                <label for = "phone_number"> Phone Number: </label>
+                <input class = "required-input" type = "tel" id = "phone_number" name = "phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXXX" required>
+                <input type = "hidden" id = "possible_bot" name = "possible_bot" value="true">
+            </fieldset>
+            <label for = "comments"> Comments: </label>
+            <textarea id = "comments" name = "comments" maxlength="500" placeholder="Enter your comments here..."></textarea>
+            <input class = "form-submit-button" type="submit" value="Submit">
+            <output id = "error-message-if-any" for = "">
+            <output id = "info-message-if-any" for = "">
+        </form>
+    </main>
+</body>
+</html>

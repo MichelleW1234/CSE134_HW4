@@ -14,29 +14,51 @@
         <form action="https://httpbin.org/post" method="POST">
             <fieldset>
                 <legend> Personal Information: </legend>
-                <label for = "first_name"> First Name: </label>
-                <input class = "required-input" type = "text" id = "first_name" name = "first_name" minlength="2" pattern="[A-Za-zÀ-ž'\-\s]+" placeholder="first name" required>
-                <label for = "last_name"> Last Name: </label>
-                <input class = "required-input" type = "text" id = "last_name" name = "last_name" minlength="2" pattern="[A-Za-zÀ-ž'\-\s]+" placeholder="last name" required>
-                <label for = "email_address"> Email Address: </label>
-                <input class = "required-input" type = "email" id = "email_address" name = "email_address" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" placeholder="name@example.com" required>
-                <label for = "phone_number"> Phone Number: </label>
-                <input class = "required-input" type = "tel" id = "phone_number" name = "phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXXX" required>
-                <input type = "hidden" id = "possible_bot" name = "possible_bot" value="true">
+                <form-field>
+                    <label for = "first_name"> First Name: </label>
+                    <input class = "required-input" type = "text" id = "first_name" name = "first_name" minlength="2" pattern="[A-Za-zÀ-ž'\-\s]+" placeholder="first name" required>
+                    <output id = "first_name-info">
+                        Enter your first name using only letters of the alphabet. The minimum length is 2 characters. 
+                    </output>
+                    <output id = "first_name-error"></output>
+                </form-field>
+                <form-field>
+                    <label for = "last_name"> Last Name: </label>
+                    <input class = "required-input" type = "text" id = "last_name" name = "last_name" minlength="2" pattern="[A-Za-zÀ-ž'\-\s]+" placeholder="last name" required>
+                    <output id = "last_name-info">
+                        Enter your last name using only letters of the alphabet. Minimum length is 2 characters. 
+                    </output>
+                    <output id = "last_name-error"></output>
+                </form-field>
+                <form-field>
+                    <label for = "email_address"> Email Address: </label>
+                    <input class = "required-input" type = "email" id = "email_address" name = "email_address" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" placeholder="name@example.com" required>
+                    <output id = "email_address-info">
+                        Enter your email using the appropriate email notation (name@example.com).
+                    </output>
+                    <output id = "email_address-error"></output>
+                </form-field>
+                <form-field>
+                    <label for = "phone_number"> Phone Number: </label>
+                    <input class = "required-input" type = "tel" id = "phone_number" name = "phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXXX" required>
+                    <output id = "phone_number-info">
+                        Enter your phone number using the appropriate phone number notation (XXX-XXX-XXXX).
+                    </output>
+                    <output id = "phone_number-error"></output>
+                </form-field>
+                <form-field>
+                    <input type = "hidden" id = "possible_bot" name = "possible_bot" value="true">
+                </form-field>
             </fieldset>
-            <label for = "comments"> Comments: </label>
-            <textarea id = "comments" name = "comments" maxlength="500" placeholder="Enter your comments here..."></textarea>
+            <form-field>
+                <label for = "comments"> Comments: </label>
+                <textarea id = "comments" name = "comments" maxlength="500" placeholder="Enter your comments here..."></textarea>
+                <output id = "comments-info">
+                    Enter any comments here. The maximum length is 500 characters. 
+                </output>
+                <output id = "comments-error"></output>
+            </form-field>
             <input class = "form-submit-button" type="submit" value="Submit">
-            <output id = "first_name-error"></output>
-            <output id = "first_name-info"></output>
-            <output id = "last_name-error"></output>
-            <output id = "last_name-info"></output>
-            <output id = "email_address-error"></output>
-            <output id = "email_address-info"></output>
-            <output id = "phone_number-error"></output>
-            <output id = "phone_number-info"></output>
-            <output id = "comments-error"></output>
-            <output id = "comments-info"></output>
         </form>
     </main>
 

@@ -456,12 +456,14 @@ form {
   .required-input:user-valid{
 
     border: 0.15rem dashed rgb(43, 255, 0);
+    background-color: rgb(209, 255, 214);
 
   }
 
   .required-input:user-invalid{
 
     border: 0.15rem dashed red;
+    background-color: rgb(255, 209, 209);
 
   }
 
@@ -486,12 +488,14 @@ form {
   textarea:user-valid{
 
     border: 0.15rem dashed rgb(43, 255, 0);
+    background-color: rgb(209, 255, 214);
 
   }
 
   textarea:user-invalid{
 
     border: 0.15rem dashed red;
+    background-color: rgb(255, 209, 209);
 
   }
 

@@ -467,6 +467,11 @@ form {
 
   }
 
+  @keyframes flash {
+    from { background-color: #ffcccc; }
+    to { background-color: white; }
+  }
+
 
   textarea{
 
@@ -530,6 +535,16 @@ form {
 
     animation: glowing-button-nav-hover 3s infinite;
 
+  }
+
+  .error {
+    color: red;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  .error.hidden {
+    opacity: 0;
   }
 
 }

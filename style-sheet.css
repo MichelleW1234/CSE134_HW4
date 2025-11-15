@@ -63,7 +63,6 @@ hr {
 
 }
 
-
 section {
 
   display: flex;
@@ -123,6 +122,7 @@ p, form{
 
 a, button {
 
+  font-family: monospace, sans-serif;
   color: var(--button-font-color);
   font-size: var(--default-font-size);
   padding: var(--button-padding-height) var(--button-padding-width);
@@ -415,7 +415,7 @@ form {
   padding: 3rem; 
 
   box-shadow: 0 0 1rem 0.5rem rgb(221, 0, 255);
-
+ 
 
   fieldset {
 
@@ -440,7 +440,7 @@ form {
 
   }
 
-  input {
+  input{
 
     font-family: monospace, sans-serif;
     padding: 0.5rem;
@@ -453,29 +453,9 @@ form {
 
   }
 
-  .required-input:user-valid{
-
-    border: 0.15rem dashed rgb(43, 255, 0);
-    background-color: rgb(209, 255, 214);
-
-  }
-
-  .required-input:user-invalid{
-
-    border: 0.15rem dashed red;
-    background-color: rgb(255, 209, 209);
-
-  }
-
-  @keyframes flash {
-    from { background-color: #ffcccc; }
-    to { background-color: white; }
-  }
-
-
   textarea{
 
-    width: 80%; 
+    width: 40vw; 
     height: 7rem; 
     align-self: center;
 
@@ -490,19 +470,32 @@ form {
 
   }
 
-  textarea:user-valid{
+  input:valid, textarea:valid{
 
     border: 0.15rem dashed rgb(43, 255, 0);
     background-color: rgb(209, 255, 214);
 
   }
 
-  textarea:user-invalid{
+  input:user-invalid, textarea:user-invalid{
 
     border: 0.15rem dashed red;
     background-color: rgb(255, 209, 209);
+    
 
   }
+
+  input.flash textarea.flash{
+
+    animation: flash 0.3s alternate 2;
+
+  }
+
+  @keyframes flash {
+    from { background-color: rgb(201, 232, 255); }
+    to { background-color: rgb(209, 255, 214); }
+  }
+
 
   output {
 

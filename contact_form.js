@@ -1,6 +1,23 @@
 document.documentElement.classList.add("js-enabled");
 
+class form_error {
+
+    constructor(inputID, invalidInput, message){
+
+        this.inputID = inputID;
+        this.invalidInput = invalidInput;
+        this.message = message;
+
+    }
+
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    let form_errors = [];
+
+    const form = document.getElementById("contact_form");
+    const hiddenInput = document.getElementById("form_errors");
 
     const firstNameInput = document.getElementById("first_name");
     const lastNameInput = document.getElementById("last_name");
@@ -9,6 +26,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const commentInput = document.getElementById("comments");
     const charCount = document.getElementById("comments-info");
+
+    // Submit
+    form.addEventListener("submit", function (event) {
+
+        hiddenInput.value = JSON.stringify(form_errors);
+
+    });
+
+
+    function addError(inputID, invalidInput, message) {
+
+        let newError = new form_error(inputID, invalidInput, message);
+        form_errors.push(newError);
+
+    }
+
 
     function showError(input, message) {
 
@@ -26,30 +59,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    const allowedNameChars = /^[A-Za-zÀ-ž'\-\s]+$/;
+    const allowedNameChars = /^[A-Za-z]+$/;
 
     function enforceNameCharacterRules(event) {
         if (!allowedNameChars.test(event.target.value)){
+
             showError(event.target, "Invalid character entered.");
-            event.target.value = event.target.value.replace(/[^A-Za-zÀ-ž'\-\s]/g, "");
+            event.target.value = event.target.value.replace(/[^A-Za-z]/g, "");
+
         }
     }
 
     firstNameInput.addEventListener("input", enforceNameCharacterRules);
 
     firstNameInput.addEventListener("invalid", (e) => {
+
+        addError(e.target.id, e.target.value, "Invalid name entered.");
+
         showError(firstNameInput, "Please enter your first name.");
+
     });
 
     lastNameInput.addEventListener("input", enforceNameCharacterRules);
 
     lastNameInput.addEventListener("invalid", (e) => {
+
+        addError(e.target.id, e.target.value, "Invalid name entered.");
+
         showError(lastNameInput, "Please enter your last name.");
+
     });
 
 
     emailInput.addEventListener("invalid", (e) => {
+
+        addError(e.target.id, e.target.value, "Email pattern not matched.");
+
         showError(emailInput, "Please enter a valid email.");
+
     });
     
 
@@ -57,20 +104,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function enforcePhoneCharacterRules(event) {
         if (!allowedPhoneChars.test(event.target.value)){
+
             showError(event.target, "Invalid character entered.");
             event.target.value = event.target.value.replace(/[^0-9-]/g, "");
+
         }
     }
 
     phoneInput.addEventListener("input", enforcePhoneCharacterRules);
 
     phoneInput.addEventListener("invalid", (e) => {
+
+        addError(e.target.id, e.target.value, "Phone pattern not matched.");
+
         showError(phoneInput, "Please enter a valid number.");
+
     });
 
     function informCommentCharLength(event) {
         const charactersRemaining = 500 - event.target.value.length;
-        charCount.textContent = `Enter any comments here. The maximum length is 500 characters. ${charactersRemaining} characters remaining`;
+        charCount.textContent = `The maximum length is 500 characters. ${charactersRemaining} characters remaining.`;
         
         if (charactersRemaining <= 50){
             charCount.style.color = "red";
@@ -83,5 +136,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     commentInput.addEventListener("input", informCommentCharLength);
+
+    commentInput.addEventListener("invalid", (e) => {
+
+        addError(e.target.id, e.target.value, "Comment not entered.");
+
+        showError(commentInput, "Please enter a comment.");
+
+    });
 
 });

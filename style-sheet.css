@@ -446,10 +446,10 @@ form {
     padding: 0.5rem;
 
     background-color: rgb(201, 232, 255);
-    border-bottom: 0.25rem solid black;
-    border-left: 0.25rem solid black;
-    border-top: 0.15rem solid black;
-    border-right: 0.15rem solid black;
+    border-bottom: 0.2rem solid black;
+    border-left: 0.2rem solid black;
+    border-top: 0.1rem solid black;
+    border-right: 0.1rem solid black;
 
   }
 
@@ -463,10 +463,10 @@ form {
     font-family: monospace, sans-serif;
 
     background-color: rgb(201, 232, 255);
-    border-bottom: 0.25rem solid black;
-    border-left: 0.25rem solid black;
-    border-top: 0.15rem solid black;
-    border-right: 0.15rem solid black;
+    border-bottom: 0.2rem solid black;
+    border-left: 0.2rem solid black;
+    border-top: 0.1rem solid black;
+    border-right: 0.1rem solid black;
 
   }
 
@@ -480,8 +480,7 @@ form {
   input:user-invalid, textarea:user-invalid{
 
     border: 0.15rem dashed red;
-    background-color: rgb(255, 209, 209);
-    
+    background-color: rgb(255, 209, 209);    
 
   }
 
@@ -531,13 +530,18 @@ form {
   }
 
   .error {
+  
     color: red;
+    min-height: var(--default-font-size);
     opacity: 1;
     transition: opacity 0.5s;
+
   }
 
   .error.hidden {
+
     opacity: 0;
+    
   }
 
 }
@@ -694,8 +698,6 @@ form {
   }
 
   form {
-
-    width: 60vw;
 
     box-shadow: 0 0 1rem 0.4rem rgb(221, 0, 255);
 

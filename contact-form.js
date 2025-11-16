@@ -1,5 +1,7 @@
 document.documentElement.classList.add("js-enabled");
 
+// For contact form: 
+
 class form_error {
 
     constructor(inputID, invalidInput, message){
@@ -146,3 +148,52 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+
+// For switch: 
+
+function setTheme(theme){
+
+    const root = document.documentElement;
+
+    if (theme === "dark"){
+
+        root.style.setProperty("background-color", "var(--bg-color-dark)");
+        root.style.setProperty("color", "var(--text-color-dark)");
+        root.style.setProperty("font-family", "var(--text-font-dark)");
+
+    } else {
+
+        root.style.setProperty("background-color", "var(--bg-color-light)");
+        root.style.setProperty("color", "var(--text-color-light)");
+        root.style.setProperty("font-family", "var(--text-font-light)");
+
+    }
+
+}
+
+function toggleTheme(){
+
+    const currTheme = localStorage.getItem("theme") || "light";
+
+    const newTheme = currTheme === "light" ? "dark" : "light";
+    localStorage.setItem("theme", newTheme);
+    setTheme(newTheme);
+
+}
+
+function setSavedTheme(){
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme){ 
+
+        setTheme(savedTheme);
+        document.getElementById("themeToggle").checked = (savedTheme === "dark");
+
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", setSavedTheme);

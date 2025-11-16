@@ -17,6 +17,11 @@
   box-sizing: border-box;
 }
 
+html {
+
+  background-color: light-dark(rgb(37, 0, 170), rgb(12, 0, 89));
+
+}
 
 body {
 
@@ -29,8 +34,6 @@ body {
   margin: 1.5rem;
 
   border: 0.25rem solid rgb(225, 0, 255);
-
-  background-color: light-dark(rgb(37, 0, 170), rgb(12, 0, 89));
 
 }
 
@@ -484,23 +487,38 @@ form {
 
   }
 
-  input.flash textarea.flash{
+  input.flash, textarea.flash{
 
     animation: flash 0.3s alternate 2;
 
   }
-
-  @keyframes flash {
-    from { background-color: rgb(201, 232, 255); }
-    to { background-color: rgb(209, 255, 214); }
-  }
-
 
   output {
 
     font-weight: normal;
     font-size: calc(var(--default-font-size)*0.8);
 
+  }
+
+  .info{
+
+    color: rgb(195, 241, 255);
+
+  }
+
+  .error {
+  
+    color: red;
+    min-height: var(--default-font-size);
+    opacity: 1;
+    transition: opacity 0.5s;
+
+  }
+
+  .error.hidden {
+
+    opacity: 0;
+    
   }
 
   .form-submit-button{
@@ -529,24 +547,7 @@ form {
 
   }
 
-  .error {
-  
-    color: red;
-    min-height: var(--default-font-size);
-    opacity: 1;
-    transition: opacity 0.5s;
-
-  }
-
-  .error.hidden {
-
-    opacity: 0;
-    
-  }
-
 }
-
-
 
 
 
@@ -954,7 +955,6 @@ form {
   }
 }
 
-
-
-
-
+@keyframes flash {
+  to { background-color: rgb(255, 117, 117); }
+}

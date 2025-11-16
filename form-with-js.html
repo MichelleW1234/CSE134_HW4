@@ -3,7 +3,7 @@
 <head>
     <meta charset = "UTF-8">
     <title> Michelle's Portfolio </title>
-    <link rel="stylesheet" href="style-sheet.css">
+    <link rel="stylesheet" href="contact-form.css">
 </head>
 <body>
     <header>
@@ -11,12 +11,17 @@
     </header>
 
     <main>
+        <label class="switch">
+            <input type="checkbox" id="themeToggle" onClick = "toggleTheme()">
+            <span class = "slider"></span> 
+        </label>
+
         <form id = "contact_form" action="https://httpbin.org/post" method="POST">
             <fieldset>
                 <legend> Personal Information: </legend>
                 <form-field>
                     <label for = "first_name"> First Name: </label>
-                    <input type = "text" id = "first_name" name = "first_name" pattern="[A-Z][a-zA-Z]+" placeholder="first name" required>
+                    <input type = "text" id = "first_name" name = "first_name" minlength = "2" pattern="[A-Z][a-zA-Z]+" placeholder="first name" required>
                     <output class = "info" id = "first_name-info">
                         Field should be at least 2 characters long and must start with an uppercase letter. 
                     </output>
@@ -24,7 +29,7 @@
                 </form-field>
                 <form-field>
                     <label for = "last_name"> Last Name: </label>
-                    <input type = "text" id = "last_name" name = "last_name" pattern="[A-Z][a-zA-Z]+" placeholder="last name" required>
+                    <input type = "text" id = "last_name" name = "last_name" minlength = "2" pattern="[A-Z][a-zA-Z]+" placeholder="last name" required>
                     <output class = "info" id = "last_name-info">
                         Field should be at least 2 characters long and must start with an uppercase letter. 
                     </output>
@@ -64,6 +69,6 @@
             <button class = "form-submit-button" type="submit">Submit</button>
         </form>
     </main>
-    <script src = "contact_form.js"></script>
+    <script src = "contact-form.js"></script>
 </body>
 </html>

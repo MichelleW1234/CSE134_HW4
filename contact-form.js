@@ -160,13 +160,11 @@ function setTheme(theme){
     if (theme === "dark"){
 
         root.style.setProperty("background-color", "var(--bg-color-dark)");
-        root.style.setProperty("color", "var(--text-color-dark)");
         root.style.setProperty("font-family", "var(--text-font-dark)");
 
     } else {
 
         root.style.setProperty("background-color", "var(--bg-color-light)");
-        root.style.setProperty("color", "var(--text-color-light)");
         root.style.setProperty("font-family", "var(--text-font-light)");
 
     }

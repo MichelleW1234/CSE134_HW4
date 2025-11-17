@@ -39,12 +39,16 @@
 
         <section id="Projects">
             <h2> Projects Section: </h2>
-            <article class = "card-carousel-container"> 
-                <button class = "page-button"> &lt; </button>
-                <project-card name = "arcade">
+            <card-carousel-container> 
+                <card-button-container>
+                    <button id = "backwards-button" class = "page-button"> &lt; </button>
+                    <button id = "forwards-button" class = "page-button"> &gt; </button>
+                </card-button-container>
+
+                <project-card class="card" name = "arcade">
                     <h3> Arcade: </h3>
                     <hr>
-                    <project-intro name = "arcade">
+                    <project-intro>
                         <picture>
                             <source srcset="./assets/arcade.svg">
                             <img src = "./assets/arcade.svg" alt="Arcade">
@@ -67,18 +71,14 @@
                     <nav>
                         <a href = "https://github.com/MichelleW1234/Arcade" target="_blank"> Visit Github Repo </a> <br>
                         <a href = "https://github.com/MichelleW1234/Arcade/releases" target="_blank"> Go to Releases </a> <br>
-                        <a href = "./project-one-media.html" target="_blank"> Go to media section </a>
+                        <a href = "project-one-media.html"> Go to media section </a>
                     </nav>
                 </project-card>
-                <button class = "page-button"> &gt; </button>
-            </article>
 
-            <article class = "card-carousel-container">
-                <button class = "page-button"> &lt; </button>
-                <project-card name = "tritonturnup">
+                <project-card class="card hidden" name = "tritonturnup">
                     <h3> TritonTurnUp: </h3>
                     <hr>
-                    <project-intro name = "tritonturnup">
+                    <project-intro>
                         <picture>
                             <source srcset="./assets/tritonturnup.svg">
                             <img src = "./assets/tritonturnup.svg" alt="TritonTurnUp">
@@ -98,18 +98,14 @@
                     <b> Actions: </b>
                     <nav>
                         <a class = "project-media-button" href = "https://github.com/MichelleW1234/CSE-110-Project" target="_blank"> Visit Github Repo </a>
-                        <a class = "project-media-button" href = "./project-two-media.html" target="_blank"> Go to media section </a>
+                        <a class = "project-media-button" href = "project-two-media.html"> Go to media section </a>
                     </nav>
                 </project-card>
-                <button class = "page-button"> &gt; </button>
-            </article>
 
-            <article class = "card-carousel-container">
-                <button class = "page-button"> &lt; </button>
-                <project-card name = "snowAgent">
+                <project-card class="card hidden" name = "snowAgent">
                     <h3> Snow Agent Advertisement: </h3>
                     <hr>
-                    <project-intro name = "snowAgent">
+                    <project-intro>
                         <picture>
                             <source srcset="./assets/snowagent.svg">
                             <img src = "./assets/snowagent.svg" alt="SnowAgent">
@@ -126,17 +122,13 @@
                         <li> Wrote detailed image prompts from basic descriptions. </li>
                     </ul>
                     <b> Actions: </b>
-                    <a class = "project-media-button" href = "./project-three-media.html" target="_blank"> Go to media section </a>
+                    <a class = "project-media-button" href = "project-three-media.html"> Go to media section </a>
                 </project-card>
-                 <button class = "page-button"> &gt; </button>
-            </article>
 
-            <article class = "card-carousel-container">
-                <button class = "page-button"> &lt; </button>
-                <project-card name = "wordProcessor">
+                <project-card class="card hidden" name= "wordProcessor">
                     <h3> Word Processor: </h3>
                     <hr>
-                    <project-intro name = "wordProcessor">
+                    <project-intro>
                         <picture>
                             <source srcset="./assets/WordProcessor.svg">
                             <img src = "./assets/WordProcessor.svg" alt="wordProcessor">
@@ -155,11 +147,13 @@
                     <b> Actions: </b>
                     <nav>
                         <a class = "project-media-button" href = "https://github.com/MichelleW1234/Word-Processor" target="_blank"> Visit Github Repo </a> <br>
-                        <a class = "project-media-button" href = "./project-four-media.html" target="_blank"> Go to media section </a>
+                        <a class = "project-media-button" href = "project-four-media.html"> Go to media section </a>
                     </nav>
                 </project-card>
-                <button class = "page-button"> &gt; </button>
-            </article>
+                </div>
+
+            </card-carousel-container>
+
         </section>
 
         <hr class="body-hr">
@@ -193,6 +187,8 @@
         
         <hr class="body-hr">
     </main>
+
+    <script src = "SPA-script.js"></script>
 
     <footer> 
         <p> Author: Michelle Wee</p>

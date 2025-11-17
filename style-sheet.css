@@ -203,18 +203,34 @@ a:link, a:visited, a:hover, a:focus, a:active{
 
 
 
-.card-carousel-container{
-
+card-carousel-container{
+  
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   gap: 3rem;
 
+
+  card-button-container{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3rem;
+
+  }
+
+  .card.hidden {
+    display: none;
+  }
+
+
   project-card {
 
-    max-width: 70%;
     width: 45vw;
     display: flex;
     flex-direction: column;
@@ -317,7 +333,8 @@ a:link, a:visited, a:hover, a:focus, a:active{
 
   }
 
-}
+} 
+
 
 .media-page-layout{
 
@@ -408,21 +425,20 @@ a:link, a:visited, a:hover, a:focus, a:active{
 
 form {
 
-  width: 60vw;
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   font-weight: bold;
 
   gap: 2rem; 
-  padding: 3rem; 
+  padding: 5rem; 
 
   box-shadow: 0 0 1rem 0.5rem rgb(221, 0, 255);
  
 
   fieldset {
 
-    width: 80%;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -609,7 +625,7 @@ form {
 
   }
 
-  .card-carousel-container{
+  card-carousel-container{
 
     .page-button {
 
@@ -617,9 +633,9 @@ form {
 
     }
 
+
     project-card {
 
-      max-width: 70%;
       width: 80vw;
       padding: 2rem;
 
@@ -649,7 +665,6 @@ form {
     }
 
   }
-
 
   .media-page-layout{
 
@@ -799,6 +814,7 @@ form {
   }
 
 }
+
 
 
 
